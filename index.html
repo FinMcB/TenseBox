@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+          <script src="js/p5/p5.js"></script>
+          <!-- <script src="js/p5/p5.pre-min.js"></script> -->
+          <script src="js/p5/addons/p5.dom.js"></script>
+          <script src="js/p5/addons/p5.sound.js"></script>
+            <script src="js/three.min.js"></script>
+            <script src="js/OrbitControls.js"></script>
+            <script src="js/tone.js"></script>
+            <!-- <script src="js/tracking-min.js"></script>
+            <script src="js/face-min.js"></script> -->
+
+
+
+            <link rel="stylesheet"  href="style.css">
+            <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+            <title>MH Artwork</title>
+        <style>
+        canvas(width : 100%, height : 100%)
+        </style>
+    	</head>
+
+<!---------------------------------------------------------------->
+
+      <!-- <div id = "hud_distance">
+        km
+      </div>
+
+      <div id = "hud_shields">
+      100
+      </div> -->
+<!---------------------------------------------------------------->
+      <div class = "ui_overlay" id = "intro_ui">
+        <h1>TenseBox</h1>
+			<p>TenseBox will react to movement or input from the microphone </p>
+
+  <br>
+  <br>
+<div class = "clickable_group">
+  <button class = "clickable" id = "intro_ok_button">OK</button>
+</div>
+</div>
+
+
+<div class = "clickable_groupTwo" style='opacity:.3'>
+  <button class = "clickableTwo" id = "home">Back To Website</button>
+</div>
+<!---------------------------------------------------------------->
+<!-- <div class = "tally_io" id = "tally_ui">
+  <h1>GAME OVER</h1>
+<ul>
+<li>Unlucky, Retry? </li>
+
+</ul>
+
+<div class = "clickable_group">
+<button class = "clickable" id = "tally_ok_button">Retry?</button>
+</div>
+</div>
+<!---------------------------------------------------------------->
+
+<body>
+  <!-- <script>
+  window.onload = function() {
+      var canvas = document.getElementById('canvas');
+      var context = canvas.getContext('2d');
+      tracking.ColorTracker.registerColor('purple', function(r, g, b) {
+        var dx = r - 120;
+        var dy = g - 60;
+        var dz = b - 210;
+        if ((b - g) >= 100 && (r - g) >= 60) {
+          return true;
+        }
+        return dx * dx + dy * dy + dz * dz < 3500;
+      });
+      var tracker = new tracking.ColorTracker(['yellow', 'purple']);
+      tracker.setMinDimension(5);
+      tracking.track('#video', tracker);
+      tracker.on('track', function(event) {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        event.data.forEach(function(rect) {
+          if (rect.color === 'custom') {
+            rect.color = tracker.customColor;
+          }
+          context.strokeStyle = rect.color;
+          context.strokeRect(rect.x, rect.y, rect.width, rect.height);
+          context.font = '11px Helvetica';
+          context.fillStyle = "#fff";
+          context.fillText('x: ' + rect.x + 'px', rect.x + rect.width + 5, rect.y + 11);
+          context.fillText('y: ' + rect.y + 'px', rect.x + rect.width + 5, rect.y + 22);
+        });
+      });
+      initGUIControllers(tracker);
+    };
+  </script> -->
+
+
+
+
+
+        <!-- <script type="text/javascript">
+        window.onload = function() {
+            var x = document.getElementById("demo-frame");
+            var video = document.getElementById('video');
+
+            var tracker = new tracking.ObjectTracker('face');
+            tracker.setInitialScale(4);
+            tracker.setStepSize(2);
+            tracker.setEdgesDensity(0.1);
+
+            tracking.track('#video', tracker, {
+                camera : true
+            });
+
+            tracker.on('track', function(event) {
+              console.log(event.data.length);
+              event.data.forEach(function(rect) {
+                  console.log('face detected');
+              });
+          });
+        }
+
+
+        </script> -->
+        <script src="js/cube.js"></script>
+
+
+    	</body>
+      <video id="video" width "300" height="300" preload autoplay loop muted></video>
+
+    </html>
